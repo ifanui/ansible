@@ -1,0 +1,17 @@
+[jump_srv]
+jump ansible_host=178.124.206.48
+
+[ub]
+ubuntu ansible_host=192.168.254.51
+
+[cen]
+centos ansible_host=192.168.254.50
+
+[prod:children]
+ub
+cen
+
+[linux:children]
+jump_srv
+ub
+cen

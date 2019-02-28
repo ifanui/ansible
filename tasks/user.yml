@@ -1,0 +1,20 @@
+---
+- hosts: "{{ hostname }}"
+  tasks:
+  - name: Create user cent for centos machine
+    become: yes
+    tags: create_user
+    user:
+     name: "{{ user_name }}"
+     generate_ssh_key: yes
+     ssh_key_bits: 2048
+     shell: /bin/bash
+     state: present
+     password: $6$AtE/XqWDxPf$AXfAlKtFPoH6QUYLUOP04G2KhgwAD.dYxYanqTsYBzJWWef1MpVcB09z91mrCG5415B1AD7qGeZ8xHy0PO/Sn1
+  - name: Delete user from machine
+    become: yes
+    tags: delete_user
+    user:
+      name: "{{ user_name }}"
+      state: absent
+...

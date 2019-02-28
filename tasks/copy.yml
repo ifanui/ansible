@@ -1,0 +1,8 @@
+---
+- name: Coping file from remote host to local host
+  hosts: "{{ hostname }}"
+  tasks:
+     - fetch:
+        src: "{{ src }}"   
+        dest: "{{ dest }}"
+...

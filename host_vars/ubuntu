@@ -1,0 +1,5 @@
+ansible_user: monitor
+#ansible_ssh_pass: QAZ123asd
+#ansible_ssh_public_key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDQ0ihviVVCEeN5CtF8eK/meWwBOyHDo20/N8dpw4mib4znDir8Y4r7gVkqf7/40WQezEvTiXDXtW4LVH7Om3/r/Z6C9ZEhCA6W5hWA9fa2pvYXI7oNzLSPqJ1+9Ss+GgfHEmG57oetqKnZawRaXyjBSpHI6MgMBXYhSEV+VMu/poEq4XFP1w3TCJEIFIDUeatUQYLa0xmO9EEzzdzbxFf/BB3Y9Pg3c7+/1BNjPdA8kjkKuZxdi08Amo4tMg3cxnKhaUE4szXH+r/W7rLi+iytSF+qeIOTg0lSRB9ciYq5xJaztCJqIDsTZdJ58eYUc8RNLjluBx/XhifkYYaVH1np ansible-generated on sa-ubuntu"
+#ansible_ssh_private_key_file: /etc/ansible/users/ansible/ansible_key.pem
+ansible_ssh_private_key_file: /etc/ansible/users/monitor/id_rsa
