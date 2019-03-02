@@ -1,0 +1,19 @@
+---
+- name: My production with vargant machine
+  hosts:
+    children:
+      prod:
+      vars: 
+        name: "Vagrant"
+      hosts:
+        vm1:
+          ansible_user: vagrant
+          ansible_host: 192.168.200.10
+          ansible_ssh_port: 2222
+        vm2: 
+           ansible_user: vagrant
+           ansible_host: 192.168.200.20
+           ansible_ssh_port: 2200
+...
+
+           
