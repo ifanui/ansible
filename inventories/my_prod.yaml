@@ -2,7 +2,7 @@
 - name: "My production with vargant machine"
   hosts:
     children:
-      prod:
+      vagrant:
       vars: 
         name: "Vagrant"
       hosts:
