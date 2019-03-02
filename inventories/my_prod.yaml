@@ -8,11 +8,11 @@
       hosts:
         vm1:
           ansible_user: vagrant
-          ansible_host: 192.168.200.10
+          ansible_host: 10.50.80.90
           ansible_ssh_port: 2222
         vm2: 
            ansible_user: vagrant
-           ansible_host: 192.168.200.20
+           ansible_host: 10.50.80.90
            ansible_ssh_port: 2200
 ...
 
