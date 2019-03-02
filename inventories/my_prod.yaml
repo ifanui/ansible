@@ -15,5 +15,3 @@
            ansible_host: 10.50.80.90
            ansible_ssh_port: 2200
 ...
-
-           
