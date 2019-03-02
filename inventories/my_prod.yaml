@@ -1,5 +1,5 @@
 ---
-- name: My production with vargant machine
+- name: "My production with vargant machine"
   hosts:
     children:
       prod:
