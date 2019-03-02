@@ -7,7 +7,7 @@ ubuntu ansible_host=192.168.254.51
 [cen]
 centos ansible_host=192.168.254.50
 
-[prod:children]
+[product:children]
 ub
 cen
 
