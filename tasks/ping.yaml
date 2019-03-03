@@ -1,5 +1,5 @@
 ---
-- hosts: linux_server
+- hosts: vagrant
   tasks:
     - name: "Ping"
       ping:

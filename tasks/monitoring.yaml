@@ -1,6 +1,6 @@
 ---
 - name: "Monitoring all linux machine"
-  hosts: linux_server
+  hosts: vagrant
   tasks:
     - name: "Check OS version"
       tags: ver_OS

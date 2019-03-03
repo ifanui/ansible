@@ -1,0 +1,8 @@
+---
+- name: For Ubuntu
+  include: web_ubuntu.yaml
+  when: ansible_os_family == 'Debian'
+
+- name: For Centos
+  include: web_centos.yaml
+  when: ansible_os_family == 'RedHat'

@@ -1,0 +1,9 @@
+---
+yum_http:
+  - mc
+  - httpd
+  - nano
+apt_http:
+  - apache2
+  - mc
+  - vim

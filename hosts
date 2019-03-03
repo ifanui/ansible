@@ -7,11 +7,22 @@ ubuntu ansible_host=192.168.254.51
 [cen]
 centos ansible_host=192.168.254.50
 
+[vm1]
+vagrant_vm1 ansible_host=10.50.80.90
+
+[vm2]
+vagrant_vm2 ansible_host=10.50.80.90
+
 [product:children]
 ub
 cen
+
 
 [linux:children]
 jump_srv
 ub
 cen
+
+[my_prod:children]
+vm1
+vm2
