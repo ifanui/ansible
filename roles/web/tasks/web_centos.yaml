@@ -3,8 +3,10 @@
   yum:
     name: "{{yum_http}}" 
 #    name: pkg={{ item }}
-#    with_items: "{{yum_http}}"
+#    register: out
     state: latest
+#- name: Out install progress
+#  debug: var=out.stdout_lines
 - name: Apache2. Remove wecome config
   file:
     path: "/etc/httpd/conf.d/welcome.conf"

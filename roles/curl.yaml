@@ -1,0 +1,11 @@
+---
+- name: Curl
+  hosts: vagrant
+  tasks:
+    - name: check url
+      shell:  curl http://localhost
+      register: webpage
+    - name: show url
+      debug:
+        var: webpage.stdout_lines
+...
