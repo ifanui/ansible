@@ -4,9 +4,11 @@
   apt:
     name: "{{apt_packages}}"
     state: latest
-- name: Create vagrant work dirictory
+- name: Create vagrant work directory
   tags: install
   shell: "mkdir ~/deploy && cd ~/deploy && vagrant init"
+  args:
+    warn: false
 - name: Vagrant remove Vagrantfile
   tags: install
   file:
