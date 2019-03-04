@@ -1,5 +1,5 @@
 ---
-- hosts: vagrant
+- hosts: vsphere
   become: yes
   roles:
     - web

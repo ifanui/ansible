@@ -30,5 +30,6 @@
     src: config/Vagrantfile
     dest: /home/deploy/
 - name: Deploy vagrant machine
-  shell: "vagrant up"
+  tags: up
+  shell: "cd /home/deploy/ && sudo vagrant up"
 ...
