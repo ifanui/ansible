@@ -1,5 +1,5 @@
 ---
-- hosts: vsphere
+- hosts: deploy
   become: yes
   roles:
-    - vagrant
+    - deploy

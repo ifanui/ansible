@@ -1,0 +1,3 @@
+- name: Deploy VM
+  hosts: deploy
+    ansible_host:10.50.80.104

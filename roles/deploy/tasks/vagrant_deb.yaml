@@ -6,31 +6,29 @@
     state: latest
 - name: Create vagrant work dirictory
   tags: install
-  shell: "mkdir /home/vagrant"
-  shell: "cd /home/vagrant"
-  shell: "vagrant init"
+  shell: "mkdir /home/deploy && cd /home/deploy && vagrant init"
 - name: Vagrant remove Vagrantfile
   tags: install
   file:
-    path: "/home/vagrant/Vagrantfile"
+    path: "/home/deploy/Vagrantfile"
     state: absent
 - name: Copy private ssh key for vagrant machine
   tags: install
   copy:
     src: "~/.ssh/id_rsa"
-    dest: /home/vagrant/
+    dest: /home/deploy/
     mode: 0600
 - name: Copy public ssh key for vagrant machine
   tags: install
   copy:
     src: "~/.ssh/id_rsa.pub"
-    dest: /home/vagrant/
+    dest: /home/deploy/
     mode: 0644
 - name: Copy working Vagranfile to repository
   tags: install
   copy:
     src: config/Vagrantfile
-    dest: /home/vagrant/
+    dest: /home/deploy/
 - name: Deploy vagrant machine
   shell: "vagrant up"
 ...
