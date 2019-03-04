@@ -1,0 +1,36 @@
+---
+- name: Install Vagrant and VirtualBox
+  tags: install
+  apt:
+    name: "{{apt_packages}}"
+    state: latest
+- name: Create vagrant work dirictory
+  tags: install
+  shell: "mkdir /home/vagrant"
+  shell: "cd /home/vagrant"
+  shell: "vagrant init"
+- name: Vagrant remove Vagrantfile
+  tags: install
+  file:
+    path: "/home/vagrant/Vagrantfile"
+    state: absent
+- name: Copy private ssh key for vagrant machine
+  tags: install
+  copy:
+    src: "~/.ssh/id_rsa"
+    dest: /home/vagrant/
+    mode: 0600
+- name: Copy public ssh key for vagrant machine
+  tags: install
+  copy:
+    src: "~/.ssh/id_rsa.pub"
+    dest: /home/vagrant/
+    mode: 0644
+- name: Copy working Vagranfile to repository
+  tags: install
+  copy:
+    src: config/Vagrantfile
+    dest: /home/vagrant/
+- name: Deploy vagrant machine
+  shell: "vagrant up"
+...

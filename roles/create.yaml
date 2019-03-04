@@ -1,0 +1,6 @@
+---
+- hosts: vsphere
+  tasks:
+    - name: create dir
+      shell: mkdir /home/vagrant && cd /home/vagrant
+...

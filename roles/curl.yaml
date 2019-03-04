@@ -1,6 +1,6 @@
 ---
 - name: Curl
-  hosts: vagrant
+  hosts: vsphere
   tasks:
     - name: check url
       shell:  curl http://localhost

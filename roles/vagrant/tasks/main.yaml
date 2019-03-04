@@ -1,0 +1,8 @@
+---
+- name: For Ubuntu install Vagrant
+  include: vagrant_deb.yaml
+  when: ansible_os_family == 'Debian'
+
+- name: For Centos install Vagrant
+  include: vagrant_rh.yaml
+  when: ansible_os_family == 'RedHat'
