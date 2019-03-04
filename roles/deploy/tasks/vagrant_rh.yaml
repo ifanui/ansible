@@ -10,30 +10,37 @@
     state: latest
 - name: Create vagrant work dirictory
   tags: install
-  shell: "mkdir /home/deploy && cd /home/deploy && vagrant init"
+  shell: "mkdir ~/deploy && cd ~/deploy && vagrant init"
 - name: Vagrant remove Vagrantfile
   tags: install
   file:
-    path: "/home/deploy/Vagrantfile"
+    path: "~/deploy/Vagrantfile"
     state: absent
 - name: Copy private ssh key for vagrant machine
   tags: install
   copy:
     src: "~/.ssh/id_rsa"
-    dest: /home/deploy/
+    dest: ~/deploy/
     mode: 0600
 - name: Copy public ssh key for vagrant machine
   tags: install
   copy:
     src: "~/.ssh/id_rsa.pub"
-    dest: /home/deploy/
+    dest: ~/deploy/
     mode: 0644
 - name: Copy working Vagranfile to repository
   tags: install
   copy:
     src: config/Vagrantfile
-    dest: /home/deploy/
+    dest: ~/deploy/
+- name: change permissions for folder deploy
+  tags: install
+  file:
+    dest: ~/deploy
+    owner: vagrant
+    group: vagrant
+    recurse: yes
 - name: Deploy vagrant machine
   tags: up
-  shell: "cd /home/deploy/ && sudo vagrant up"
+  shell: "cd ~/deploy/ && vagrant up"
 ...

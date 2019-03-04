@@ -3,8 +3,9 @@
         config.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", "id_rsa"]
         config.ssh.insert_key = false
         config.vm.provision "file", source: "id_rsa.pub" , destination: "~/.ssh/authorized_keys"
-        config.vm.boot_timeout = 90
+
 #Virtual machine VM1
+
         config.vm.define "vm1" do |vm1|
         vm1.vm.network "private_network", ip: "192.168.200.10"
         vm1.vm.network "forwarded_port", guest: 22, host: 222, protocol: "tcp", auto_correct: true
@@ -16,7 +17,9 @@
         v1.gui = false
 end
 end
+
 #Virtual machine VM2
+
         config.vm.define "vm2" do |vm2|
         vm2.vm.box = "centos/7"
         vm2.vm.network "forwarded_port", guest: 22, host: 220, protocol: "tcp", auto_correct: true
