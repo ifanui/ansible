@@ -37,9 +37,13 @@
     dest: "{{ index_ru }}"
 
 - name: Copy site config
+  tags: cp_site
   copy:
-    src: "{{ my_site }}"
+    src: "{{ item }}"
     dest: "{{ sites }}"
+    with_items:
+      - devops.by/devops.by
+      - devops.ru/devops.ru
 
 - name: Reload nginx config
   shell: "nginx -t | nginx -s reload"
