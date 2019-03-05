@@ -10,12 +10,13 @@
         var: webpage.stdout_lines
     - name: Check working all sites 
       uri:
-        url: http://"{{ item }}"
+        url: http://{{item}}
         return_content: yes
+      register: devops
       with_items:
         - devops.by
-        - devops.ru  
-      register: devops.*
-    - debug: 
-      msg: "{{ devops.* }}"
+        - devops.ru
+    - name: show debug
+      debug:
+        msg: "{{ devops }}"
 ...
