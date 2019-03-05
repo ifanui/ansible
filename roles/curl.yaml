@@ -8,4 +8,14 @@
     - name: show url
       debug:
         var: webpage.stdout_lines
+    - name: Check working all sites 
+      uri:
+        url: http://"{{ item }}"
+        return_content: yes
+      with_items:
+        - devops.by
+        - devops.ru  
+      register: devops.*
+    - debug: 
+      msg: "{{ devops.* }}"
 ...

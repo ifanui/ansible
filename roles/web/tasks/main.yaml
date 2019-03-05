@@ -23,6 +23,7 @@
     state: directory
 
 - name: Template, add sitename
+  tags: hosts
   template:
     src: "hosts.j2"
     dest: "/etc/hosts"
