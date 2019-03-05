@@ -32,7 +32,7 @@
     dest: "{{ index_by }}"
 - name: Copy index.html for site DevOps RU
   copy:
-    src: devops.by/index.html
+    src: devops.ru/index.html
     dest: "{{ index_ru }}"
 
 - name: Copy site config
