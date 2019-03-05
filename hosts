@@ -26,3 +26,6 @@ cen
 [my_prod:children]
 vm1
 vm2
+
+[machine]
+machine ansible_user=user ansible_ssh_pass=QwertY_13  ansible_host=192.168.253.4

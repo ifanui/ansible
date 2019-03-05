@@ -1,0 +1,22 @@
+- name: Apt update
+  apt:
+    update_cache: yes
+- name: Redmine. Install packages
+  apt:
+    name: "{{ apt }}"
+    state: latest
+- name:Mysql
+  block:
+  - template:
+      src: template/.my.cnf
+      dest: ~/.my.cnf
+      owner: root
+      mode: 0600
+    notify: 
+      - mysql restart
+- mysql_dd:
+    name: "{{ app_db_name }}"
+    encoding: utf8
+    
+- mysql_user:
+  

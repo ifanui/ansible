@@ -1,0 +1,11 @@
+---
+- name: Curl
+  hosts: vsphere
+  tasks:
+    - name: Check working all sites 
+      shell: curl  http://{{item}}
+      register: devops
+      with_items:
+        - devops.by
+        - devops.ru
+...
