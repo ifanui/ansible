@@ -18,6 +18,8 @@ index:
   - "{{ index_ru }}"
   - "{{ index_by }}"
 sites: "/etc/nginx/sites-available/"
+devops.by: "devops/devops.by"
+devops.ru: "devops/devops.ru"
 my_site:
-  - devops/devops.by
-  - devops/devops.ru
+  - "{{ devops.by }}"
+  - "{{ devops.ru }}"
