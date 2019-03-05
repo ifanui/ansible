@@ -38,8 +38,8 @@
 
 - name: Copy site config
   copy:
-    src: "{{ sites }}"
-    dest: "{{ my_site }}"
+    src: "{{ my_site }}"
+    dest: "{{ sites }}"
 
 - name: Reload nginx config
   shell: "nginx -t | nginx -s reload"
