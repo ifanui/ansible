@@ -12,3 +12,11 @@
     name: nginx
     state: started
     enabled: yes
+- name: Copy site config for RedHat OS
+  tags: cp_site
+  copy:
+    src: "{{ item }}"
+    dest: "{{ sites_rh }}"
+  with_items:
+    - devops.by/devops.by.conf
+    - devops.ru/devops.ru.conf

@@ -17,7 +17,8 @@ index_by: "/var/www/devops_by/"
 index:
   - "{{ index_ru }}"
   - "{{ index_by }}"
-sites: "/etc/nginx/sites-enabled/"
+sites_deb: "/etc/nginx/sites-enabled/"
+sites_rh: "/etc/nginx/conf.d"
 devops.by: "devops/devops.by"
 devops.ru: "devops/devops.ru"
 my_site:

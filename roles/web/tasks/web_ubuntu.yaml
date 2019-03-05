@@ -7,3 +7,11 @@
     name: nginx
     state: started
     enabled: yes
+- name: Copy site config for Debian OS
+  tags: cp_site
+  copy:
+    src: "{{ item }}"
+    dest: "{{ sites_deb }}"
+  with_items:
+    - devops.by/devops.by
+    - devops.ru/devops.ru
