@@ -46,4 +46,5 @@
     - devops.ru/devops.ru
 
 - name: Reload nginx config
+  tags: conf_reload
   shell: "nginx -t | nginx -s reload"
