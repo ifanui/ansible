@@ -1,4 +1,8 @@
 ---
+- name: install epel dependense
+  yum: 
+    name: "{{ epel }}"
+    state: latest
 - name: Nginx. Redhat
   yum:
     name: "{{ yum_nginx }}" 

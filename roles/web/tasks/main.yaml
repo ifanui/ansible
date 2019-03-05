@@ -19,7 +19,8 @@
     path: "{{ index }}"
     owner: root
     group: root
-    state: file
+    mode: 0755
+    state: directory
 
 - name: Template, add sitename
   template:
