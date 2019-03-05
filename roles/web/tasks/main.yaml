@@ -6,3 +6,39 @@
 - name: For Centos
   include: web_centos.yaml
   when: ansible_os_family == 'RedHat'
+
+- name: Check connect Nginx start
+  wait_for:
+    host: "localhost"
+    port: "80"
+    state: started
+    delay: 0
+    timeout: 4
+- name: Create folder for site
+  file:
+    path: "{{ index }}"
+    owner: root
+    group: root
+    state: file
+
+- name: Template, add sitename
+  template:
+    src: "hosts.j2"
+    dest: "/etc/hosts"
+    backup: yes
+- name: Copy index.html for site DevOps BY
+  copy:
+    src: devops.by/index.html
+    dest: "{{ index_by }}"
+- name: Copy index.html for site DevOps RU
+  copy:
+    src: devops.by/index.html
+    dest: "{{ index_ru }}"
+
+- name: Copy site config
+  copy:
+    src: "{{ sites }}"
+    dest: "{{ my_site }}"
+
+- name: Reload nginx config
+  shell: "nginx -t | nginx -s reload"

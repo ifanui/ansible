@@ -1,18 +1,10 @@
 ---
-- name: Apache2. Redhat
+- name: Nginx. Redhat
   yum:
-    name: "{{yum_http}}" 
-#    name: pkg={{ item }}
-#    register: out
+    name: "{{ yum_nginx }}" 
     state: latest
-#- name: Out install progress
-#  debug: var=out.stdout_lines
-- name: Apache2. Remove wecome config
-  file:
-    path: "/etc/httpd/conf.d/welcome.conf"
-    state: absent
-- name: Apache2. Start
+- name: Nginx. Start
   service:
-    name: httpd
+    name: nginx
     state: started
     enabled: yes

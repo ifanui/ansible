@@ -1,0 +1,7 @@
+127.0.0.1 localhost
+
+{% if virual_hosts is defined %}
+{% for var in virual_hosts %}
+{{ var.name }}      {{ var.ip }}
+{% endfor %}
+{% endif %}

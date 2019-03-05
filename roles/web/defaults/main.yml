@@ -1,9 +1,22 @@
 ---
-yum_http:
+yum_nginx:
   - mc
-  - httpd
+  - nginx
   - nano
-apt_http:
-  - apache2
+  - epel-release
+apt_nginx:
+  - nginx
   - mc
   - vim
+virual_hosts:
+  - { name: "devops.by", ip: "127.0.0.1"}
+  - { name: "devops.ru", ip: "127.0.0.1"} 
+index_ru: "/var/www/devops_ru"
+index_by: "/var/www/devops_by"
+index:
+  - "{{ index_ru }}"
+  - "{{ index_by }}"
+sites: "/etc/nginx/sites-available/"
+my_site:
+  - "devops/devops.by"
+  - "devops/devops.ru"

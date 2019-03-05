@@ -1,9 +1,9 @@
 ---
-- name: Install Apache2. Ubuntu
+- name: Install Nginx. Ubuntu
   apt:
-    name: "{{ apt_http }}"
-- name: Apache2. Start
+    name: "{{ apt_nginx }}"
+- name: Nginx start
   service:
-    name: apache2
+    name: nginx
     state: started
     enabled: yes
