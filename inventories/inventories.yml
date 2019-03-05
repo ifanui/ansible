@@ -1,0 +1,17 @@
+---
+all_servers:
+  children:
+   linux_server:
+          hosts:
+              ub:
+                ansible_user: ansible
+                ansible_ssh_private_key_file: /etc/ansible/users/ansible/ansible_key.pem
+                ansible_host: 192.168.254.51
+              cen:
+                ansible_host: 192.168.254.50
+                ansible_user: cent
+                ansible_ssh_private_key_file: /etc/ansible/users/cent/cent_key.pem
+              jump_srv:
+                      ansible_user: jump
+                      ansible_host: 178.124.206.48
+...

@@ -1,0 +1,22 @@
+---
+- name: Curl
+  hosts: vsphere
+  tasks:
+    - name: check url
+      shell:  curl http://localhost
+      register: webpage
+    - name: show url
+      debug:
+        var: webpage.stdout_lines
+    - name: Check working all sites 
+      uri:
+        url: http://{{item}}
+        return_content: yes
+      register: devops
+      with_items:
+        - devops.by
+        - devops.ru
+    - name: show debug
+      debug:
+        msg: "{{ devops }}"
+...

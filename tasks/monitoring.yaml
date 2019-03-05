@@ -1,0 +1,26 @@
+---
+- name: "Monitoring all linux machine"
+  hosts: vagrant
+  tasks:
+    - name: "Check OS version"
+      tags: ver_OS
+      debug:
+       msg: "{{ ansible_distribution, ansible_os_family }}"
+    - name: "Run shell df -h and register"
+      tags: space
+      shell: df -h
+      register: space_result
+    - name: "Show space"
+      tags: space
+      debug:
+        var: space_result.stdout_lines 
+    - name: "Check RAM/capacity/free"
+      tags: memory
+      shell: free -m
+      register: memory_result
+    - name: "Show RAM/capacity/free"
+      tags: memory
+      debug: 
+        var: memory_result.stdout_lines
+...   
+         

@@ -1,0 +1,8 @@
+---
+#- name: Copy for RedHat
+- copy:
+    src: html_centos/index.html
+    dest: /var/www/html/
+    mode: 0644
+
+

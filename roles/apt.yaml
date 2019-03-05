@@ -1,0 +1,9 @@
+- name: apt install other packages
+  hosts: deploy
+  become: yes
+  tasks:
+  - name: apt install
+    apt:
+      name: "{{ pkg  }}"
+      state: latest
+...

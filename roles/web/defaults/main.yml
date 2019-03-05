@@ -1,0 +1,26 @@
+---
+epel:
+ - epel-release
+yum_nginx:
+  - mc
+  - nano
+  - nginx
+apt_nginx:
+  - nginx
+  - mc
+  - vim
+virual_hosts:
+  - { ip: "127.0.0.1", name: "devops.by www.devops.by" }
+  - { ip: "127.0.0.1", name: "devops.ru www.devops.ru" } 
+index_ru: "/var/www/devops_ru/"
+index_by: "/var/www/devops_by/"
+index:
+  - "{{ index_ru }}"
+  - "{{ index_by }}"
+sites_deb: "/etc/nginx/sites-enabled/"
+sites_rh: "/etc/nginx/conf.d"
+devops.by: "devops/devops.by"
+devops.ru: "devops/devops.ru"
+my_site:
+  - "{{ devops.by }}"
+  - "{{ devops.ru }}"

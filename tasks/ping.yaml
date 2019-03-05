@@ -1,0 +1,5 @@
+---
+- hosts: vagrant
+  tasks:
+    - name: "Ping"
+      ping:

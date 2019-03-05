@@ -1,0 +1,35 @@
+#############################config#########################
+	Vagrant.configure("2") do |config|
+        config.ssh.private_key_path = ["~/.vagrant.d/insecure_private_key", "id_rsa"]
+        config.ssh.insert_key = false
+        config.vm.provision "file", source: "id_rsa.pub" , destination: "~/.ssh/authorized_keys"
+
+#Virtual machine VM1
+
+        config.vm.define "vm1" do |vm1|
+        vm1.vm.network "private_network", ip: "192.168.200.10"
+        vm1.vm.network "forwarded_port", guest: 22, host: 8022, protocol: "tcp", auto_correct: true
+        vm1.vm.box = "ubuntu/trusty64"
+        vm1.vm.hostname = "vm1"
+        vm1.vm.provider "virtualbox" do |v1|
+        v1.memory = 1024
+        v1.cpus = 1
+        v1.gui = false
+end
+end
+
+#Virtual machine VM2
+
+        config.vm.define "vm2" do |vm2|
+        vm2.vm.box = "centos/7"
+        vm2.vm.network "forwarded_port", guest: 22, host: 8023, protocol: "tcp", auto_correct: true
+        vm2.vm.network "private_network", ip: "192.168.200.20"
+        vm2.vm.hostname = "vm2"
+        vm2.vm.provider "virtualbox" do |v2|
+        v2.memory = 1024
+        v2.cpus = 1
+        v2.gui = false
+end
+end
+
+end

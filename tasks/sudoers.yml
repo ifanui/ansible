@@ -1,0 +1,14 @@
+---
+- name: "Change sudoers for new user"  
+  hosts: "{{ hostname }}"
+  vars:
+     username: "{{ user }}"
+  become: yes
+  tasks:
+     - lineinfile:
+         path: /etc/sudoers
+         state: present
+         regexp: '^ '
+         line: '{{username}} ALL=(ALL) NOPASSWD: ALL'
+         validate: 'visudo -cf %s' 
+...
