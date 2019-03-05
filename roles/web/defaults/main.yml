@@ -10,14 +10,14 @@ apt_nginx:
   - mc
   - vim
 virual_hosts:
-  - { ip: "127.0.0.1", name: "devops.by" }
-  - { ip: "127.0.0.1", name: "devops.ru" } 
+  - { ip: "127.0.0.1", name: "devops.by, www.devops.by" }
+  - { ip: "127.0.0.1", name: "devops.ru, www.devops.ru" } 
 index_ru: "/var/www/devops_ru/"
 index_by: "/var/www/devops_by/"
 index:
   - "{{ index_ru }}"
   - "{{ index_by }}"
-sites: "/etc/nginx/sites-available/"
+sites: "/etc/nginx/sites-enabled/"
 devops.by: "devops/devops.by"
 devops.ru: "devops/devops.ru"
 my_site:

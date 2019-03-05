@@ -1,11 +1,10 @@
 server {
-        listen 80 devops.by;
-        listen [::]:80 devops.by;
-
+        listen 80;
+        
         root /var/www/devops_by;
         index index.html index.htm index.nginx-debian.html;
 
-        server_name _;
+        server_name www.devops.by devops.by;
 
         location / {
                 try_files $uri $uri/ =404;
