@@ -1,9 +1,9 @@
 ---
 yum_nginx:
   - mc
-  - nginx
-  - nano
   - epel-release
+  - nano
+  - nginx
 apt_nginx:
   - nginx
   - mc
