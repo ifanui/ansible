@@ -1,8 +1,8 @@
 - name: Destroy Vagrant machine
   hosts: deploy
   tasks:
-      name: Destroy Vagrnat
+    - name: Destroy Vagrnat
       shell: |
         cd ~/deploy
-        vagrant destroy -f 
+        vagrant destroy -f
 ...

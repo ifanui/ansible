@@ -1,4 +1,5 @@
 ---
-- hosts: deploy
+- name: Installing Vagrant and UP VM Machine
+  hosts: deploy
   roles:
     - deploy
