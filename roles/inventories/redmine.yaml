@@ -3,4 +3,3 @@ all_servers:
     redmine:
       ansible_host: 192.168.253.4
       ansible_user: user
-      ansible_pass: QwertY_13
