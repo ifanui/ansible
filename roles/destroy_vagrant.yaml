@@ -4,5 +4,5 @@
     - name: Destroy Vagrnat
       shell: |
         cd ~/deploy
-        vagrant destroy -f
+        vagrant destroy -f 
 ...

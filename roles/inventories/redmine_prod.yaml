@@ -1,0 +1,6 @@
+hosts:
+  children:
+    red_prod
+      hosts:
+        deploy:
+        redmine:  
