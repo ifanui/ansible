@@ -3,7 +3,7 @@
     repo: 'ppa:brightbox/ruby-ng'
 - name: Install package from deb
   apt:
-    deb: python-pymysql_0.7.2-1ubuntu1_all.deb
+    deb: http://archive.ubuntu.com/ubuntu/pool/main/p/python-pymysql/python-pymysql_0.7.2-1ubuntu1_all.deb
 - name: Apt update
   apt:
     update_cache: yes

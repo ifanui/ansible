@@ -1,5 +1,5 @@
 ---
-- hosts: red_prod
+- hosts: redmine
   become: yes
   roles:
     - redmine

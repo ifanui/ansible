@@ -2,6 +2,7 @@
 - name: Install deb
   hosts: vm1
   tasks:
-    apt:  
-      deb: http://archive.ubuntu.com/ubuntu/pool/main/p/python-pymysql/python-pymysql_0.7.2-1ubuntu1_all.deb
-... 
+    - name: install deb
+      apt:
+        deb: http://archive.ubuntu.com/ubuntu/pool/main/p/python-pymysql/python-pymysql_0.7.2-1ubuntu1_all.deb
+...

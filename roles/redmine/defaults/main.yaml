@@ -10,8 +10,9 @@ apt:
   - libapache2-mod-passenger
   - mysql-server
   - mysql-client
- # - python-pymysql
-  
+  - python-pymysql
+  - ruby2.4
+  - ruby2.4-dev
 deb:
   - python-pymysql_0.7.2-1ubuntu1_all.deb
   
