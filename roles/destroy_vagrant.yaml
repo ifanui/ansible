@@ -3,6 +3,6 @@
   tasks:
       name: Destroy Vagrnat
       shell: |
-      cd ~/deploy
-      vagrant destroy -f 
+        cd ~/deploy
+        vagrant destroy -f 
 ...
