@@ -21,7 +21,7 @@
     name: "{{ app_db_user }}"
     password: "{{ app_db_pass }}"
     priv: "{{ app_db_name }}.*:ALL"
-- name: RM.
+- name: RM. Clone
   git:
     repo: "{{ app_repo }}"
     dest: "{{ app_home }}"
@@ -53,7 +53,7 @@
   args:
     chdir: "{{ app_home }}"
 
-- name: Apache. Config
+- name: Apache2. Config
   tags: conf
   template:
     src: redmine.conf.j2
