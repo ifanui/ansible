@@ -1,3 +1,6 @@
+- name: Add Ruby Repository
+  apt_repository:
+    repo: 'ppa:brightbox/ruby-ng'
 - name: Apt update
   apt:
     update_cache: yes
