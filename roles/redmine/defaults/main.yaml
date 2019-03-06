@@ -10,7 +10,7 @@ apt:
   - libapache2-mod-passenger
   - mysql-server
   - mysql-client
-  - python-pymysql
+  - python-mysqldb
   
   
 app_db_name: redmine

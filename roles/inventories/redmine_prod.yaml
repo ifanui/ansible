@@ -1,6 +1,13 @@
-hosts:
+---
+all:
   children:
-    red_prod
+    red_prod:
       hosts:
-        deploy:
-        redmine:  
+        redmine:
+          ansible_host: 192.168.253.4
+          ansible_user: user
+        vm1:
+          ansible_user: vagrant
+          ansible_host: 10.50.80.104
+          ansible_ssh_port: 8022
+          ansible_ssh_private_key_file: ~/.ssh/id_rsa
