@@ -13,7 +13,7 @@ apt:
  # - python-pymysql
   
 deb:
-- http://archive.ubuntu.com/ubuntu/pool/main/p/python-pymysql/python-pymysql_0.7.2-1ubuntu1_all.deb
+- python-pymysql_0.7.2-1ubuntu1_all.deb
   
 app_db_name: redmine
 app_db_user: redmine
