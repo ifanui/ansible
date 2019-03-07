@@ -1,9 +1,10 @@
 ---
 apt_packages:
   - virtualbox
-  - vagrant
 yum_packages:
   - ruby
   - rubygems
 gem_packages:
   - vagrant
+deb_packahes:
+  - vagrant_2.2.4_x86_64.deb

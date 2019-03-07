@@ -1,10 +1,13 @@
 ---
-- name: Install Vagrant and VirtualBox
+- name: Install VirtualBox
   tags: install
   apt:
     name: "{{apt_packages}}"
     state: latest
+- name: Install vagrant from deb package
 - name: Create vagrant work directory
+  apt:
+    deb: vagrant_2.2.4_x86_64.deb 
   tags: install
   shell: "mkdir ~/deploy && cd ~/deploy && vagrant init"
   args:
@@ -33,7 +36,7 @@
 - name: Copy working Vagranfile to repository
   tags: install
   copy:
-    src: config/Vagrantfile
+    src: Vagrantfile
     dest: ~/deploy/
 - name: change permissions for folder deploy
   tags: install

@@ -33,7 +33,7 @@
 - name: Copy working Vagranfile to repository
   tags: install
   copy:
-    src: config/Vagrantfile
+    src: Vagrantfile
     dest: ~/deploy/
 - name: change permissions for folder deploy
   tags: install

@@ -1,5 +1,5 @@
 ---
-- hosts: redmine
+- hosts: vagrant
   become: yes
   roles:
     - redmine
