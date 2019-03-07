@@ -73,6 +73,7 @@
     return_content: yes
   register: this
   failed_when: "'Jean-Philippe' not in this.content"
+  tags: uri
 - lineinfile:
     path: /etc/hosts
     state: absent

@@ -6,5 +6,4 @@ yum_packages:
   - rubygems
 gem_packages:
   - vagrant
-deb_packahes:
-  - vagrant_2.2.4_x86_64.deb
+deb_packages: https://releases.hashicorp.com/vagrant/2.2.4/vagrant_2.2.4_x86_64.deb
