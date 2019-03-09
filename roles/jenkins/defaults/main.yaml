@@ -1,0 +1,14 @@
+---
+apt: https://pkg.jenkins.io/debian-stable
+apt_packages:
+  - mс
+  - jenkins
+  - nano
+  - nginx
+services:
+  - jenkins
+  - nginx
+packages:
+  - java
+  - wget
+  - git

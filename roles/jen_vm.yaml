@@ -1,0 +1,4 @@
+- name: Installing Vagrant and UP VM Machine for Jenkins
+  hosts: deploy
+  roles:
+    - vagrant
