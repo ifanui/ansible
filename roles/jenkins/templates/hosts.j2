@@ -6,6 +6,6 @@
 127.0.0.1 localhost.localdomain localhost
 {% if virual_hosts is defined %}
 {% for var in virual_hosts %}
-{{ hostvars[host].ansible_default_ipv4.address }}      {{ var.host }}
+{{ hostvars[inventory_hostname].ansible_default_ipv4.address }}  {{ var.host }}
 {% endfor %}
 {% endif %}
