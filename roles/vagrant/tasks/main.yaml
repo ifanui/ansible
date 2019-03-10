@@ -41,7 +41,7 @@
 - name: Copy files from loacl machine to jenkins VM
   tags: install
   copy:
-    src: "{{ files }}"
+    src: Vagrantfile
     dest: ~/jenkins/
 - name: change permissions for folder jenkins
   tags: install
