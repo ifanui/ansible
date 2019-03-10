@@ -44,9 +44,28 @@
 #    name: "{{ services }}"
 #    state: started
 #    enabled: yes
+- name: Check Start Jenkins
+  wait_for:
+    host: "localhost"
+    port: "8080"
+    state: started
+    delay: 0
+    timeout: 3
 - name: show initialAdminPassword
   shell: cat /var/lib/jenkins/secrets/initialAdminPassword
   register: pass
 - name: show pass
   debug:
     var: pass.stdout_lines
+- name: Change hosts file for site
+  template:
+    src: "hosts.j2"
+    dest: "/etc/hosts"
+    backup: yes
+- name: Copy site config for Nginx server
+  template:
+    src: "master.jenkins.by.j2"
+    dest: "/etc/nginx/sites-enabled/master.jenkins.by"
+  notify: 
+    - nginx restart
+

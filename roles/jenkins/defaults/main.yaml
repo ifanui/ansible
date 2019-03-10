@@ -12,3 +12,5 @@ packages:
   - openjdk-8-jre-headless
   - wget
   - git
+virual_hosts:
+- { host: "master.jenkins.by" }
