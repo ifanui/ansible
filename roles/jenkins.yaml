@@ -1,5 +1,6 @@
 ---
 - name: Installing Vagrant and UP VM Machine
-  hosts: deploy
+  hosts: jenkins_m
+  become: yes
   roles:
     - jenkins

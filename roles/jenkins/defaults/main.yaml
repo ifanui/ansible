@@ -1,7 +1,7 @@
 ---
 apt: https://pkg.jenkins.io/debian-stable
 apt_packages:
-  - mс
+  - mc
   - jenkins
   - nano
   - nginx
@@ -9,6 +9,6 @@ services:
   - jenkins
   - nginx
 packages:
-  - java
+  - openjdk-8-jre-headless
   - wget
   - git

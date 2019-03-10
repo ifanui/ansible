@@ -1,7 +1,9 @@
-- name: host jenkins master
-- hosts:
-  jenkins_m:
-    ansible_host: 10.50.80.104
-    ansible_ssh_port: 8022
+---
+all:
+  hosts:
+    jenkins_m:
+      ansible_host: 10.50.80.104
+      ansible_ssh_port: 8022
+      ansible_user: vagrant
 
   

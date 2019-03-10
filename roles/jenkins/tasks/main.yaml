@@ -28,12 +28,10 @@
     group: jenkins
     mode: 0644
 - name: add the repository key to the system 
-  shell: |
-    wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key
-    sudo apt-key add -
+  shell: "wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -"
 - name: append the Debian package repository address to the server's
   apt_repository: 
-    repo: deb https://pkg.jenkins.io/debian-stable binary
+    repo: deb https://pkg.jenkins.io/debian-stable binary/
     state: present
 - name: Apt update
   apt:
@@ -41,8 +39,14 @@
 - name: Install Jenkins
   apt:
     name: "{{ apt_packages }}"
-- name: Make sure a service is running Jenkins,Nginx
-  systemd:
-    state: started
-    enabled: yes
-    name: "{{ services }}"
+#- name: Make sure a service is running Jenkins,Nginx
+#  service:
+#    name: "{{ services }}"
+#    state: started
+#    enabled: yes
+- name: show initialAdminPassword
+  shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+  register: pass
+- name: show pass
+  debug:
+    var: pass.stdout_lines
