@@ -1,0 +1,8 @@
+- name: Destroy Vagrant machine
+  hosts: deploy
+  tasks:
+    - name: Destroy Vagrnat
+      shell: |
+        cd ~/jenkins
+        vagrant destroy -f 
+...

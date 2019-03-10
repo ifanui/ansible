@@ -46,11 +46,9 @@
 #    enabled: yes
 - name: Check Start Jenkins
   wait_for:
-    host: "localhost"
-    port: "8080"
-    state: started
-    delay: 0
-    timeout: 3
+    path: /var/lib/jenkins/secrets/initialAdminPassword
+    delay: 10
+    timeout: 120
 - name: show initialAdminPassword
   shell: cat /var/lib/jenkins/secrets/initialAdminPassword
   register: pass

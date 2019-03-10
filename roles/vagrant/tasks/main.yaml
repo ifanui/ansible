@@ -12,16 +12,11 @@
 - name: show install deb package
   debug:
     var: deb_install 
-- name: Create vagrant work directory
-  tags: install
-  shell: "mkdir ~/jenkins && cd ~/jenkins && vagrant init"
-  args:
-    warn: false
-- name: Vagrant remove Vagrantfile
-  tags: install
+- name: Create jenkins deploy folder
   file:
-    path: "~/jenkins/Vagrantfile"
-    state: absent
+    path: ~/jenkins
+    state: directory
+
 - name: Copy private ssh key for vagrant machine
   tags: install
   copy:
