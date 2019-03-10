@@ -4,10 +4,10 @@
         config.ssh.insert_key = false
         config.vm.provision "file", source: "id_rsa.pub" , destination: "~/.ssh/authorized_keys"
 
-#Virtual machine VM1
+#Virtual machine Master
 
         config.vm.define "jenkins" do |jenkins|
-        jenkins.vm.network "public_network", ip: "192.168.200.100", bridge: "ens160"
+        jenkins.vm.network "public_network", ip: "192.168.200.100"
         jenkins.vm.network "forwarded_port", guest: 22, host: 8022, protocol: "tcp", auto_correct: true
         jenkins.vm.network "forwarded_port", guest: 80, host: 8090, protocol: "tcp", auto_correct: true
         jenkins.vm.provision "shell", inline: "which python || sudo apt -y install python"
@@ -19,5 +19,23 @@
         v1.gui = false
 end
 end
+#Virtual machine Slave
 
+        config.vm.define "slave" do |slave|
+        slave.vm.network "public_network", ip: "192.168.200.10"
+        slave.vm.network "forwarded_port", guest: 22, host: 2022, protocol: "tcp", auto_correct: true
+        slave.vm.network "forwarded_port", guest: 80, host: 8081, protocol: "tcp", auto_correct: true
+        slave.vm.provision "file",
+        source: "id_rsa.pub",
+        destination: "/tmp/id_rsa.pub"
+        slave.vm.provision "shell", inline: "which python || sudo apt -y install python"
+        slave.vm.provision "shell", path: "script.sh"
+        slave.vm.box = "ubuntu/trusty64"
+        slave.vm.hostname = "slave"
+        slave.vm.provider "virtualbox" do |v1|
+        v1.memory = 1024
+        v1.cpus = 1
+        v1.gui = false
+end
+end
 end

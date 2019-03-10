@@ -33,10 +33,14 @@
     owner: vagrant
     group: vagrant
     mode: 0644
-- name: Copy files from loacl machine to jenkins VM
+- name: Copy files from local machine to jenkins VM
   tags: install
   copy:
     src: Vagrantfile
+    dest: ~/jenkins/
+- name: Copy script to remote machine
+  copy:
+    src: script.sh
     dest: ~/jenkins/
 - name: change permissions for folder jenkins
   tags: install
