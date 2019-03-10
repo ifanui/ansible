@@ -13,4 +13,9 @@ packages:
   - wget
   - git
 virual_hosts:
+<<<<<<< HEAD
   - { name: "master.jenkins.by" }
+=======
+- { name: "master.jenkins.by" }
+site: master.jenkins.by
+>>>>>>> 72c6e1cd94deeb1af1a14935cd7ca77ff2ab1f13

@@ -1,12 +1,10 @@
 ##
 ## This file is maintained by Ansible - CHANGES WILL BE OVERWRITTEN
 ##
-{% if virual_hosts is defined %}
-{% for var in virual_hosts %}
 server {
-        server_name {{ var.name }};
+        server_name {{ site }};
         location / {
-            proxy_pass http://{{ hostvars[host].ansible_default_ipv4.address }}:8080/;
+            proxy_pass http://{{ hostvars[inventory_hostname].ansible_default_ipv4.address }}:8080/;
             proxy_redirect     off;
             proxy_set_header   Host             $host;
             proxy_set_header   X-Real-IP        $remote_addr;
