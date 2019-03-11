@@ -29,7 +29,8 @@
     mode: 0644
 - name: add the repository key to the system 
   shell: "wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -"
-  warn: False
+  args:
+    warn: False
 - name: append the Debian package repository address to the server's
   apt_repository: 
     repo: deb https://pkg.jenkins.io/debian-stable binary/
