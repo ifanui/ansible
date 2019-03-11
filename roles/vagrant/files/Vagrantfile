@@ -28,6 +28,9 @@ end
         slave.vm.provision "file",
         source: "id_rsa.pub",
         destination: "/tmp/id_rsa.pub"
+        slave.vm.provision "file",
+        source: "id_rsa",
+        destination: "/tmp/id_rsa"
         slave.vm.provision "shell", inline: "which python || sudo apt -y install python"
         slave.vm.provision "shell", path: "script.sh"
         slave.vm.box = "ubuntu/trusty64"
