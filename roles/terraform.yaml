@@ -1,0 +1,5 @@
+- name: Installing from terraform and UP VM Machine
+  hosts: terraforma
+  become: yes
+  roles:
+    - terraforma

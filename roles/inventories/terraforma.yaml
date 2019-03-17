@@ -1,0 +1,4 @@
+all_servers:
+  hosts:
+    terraform:
+      ansible_host: 10.50.80.140
