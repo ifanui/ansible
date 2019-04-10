@@ -1,0 +1,6 @@
+---
+all:
+  hosts:
+    jump:
+      ansible_host: 35.181.52.49
+      ansible_user: centos

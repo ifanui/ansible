@@ -1,5 +1,5 @@
 ---
-- hosts: vagrant
+- hosts: aws_jen
   become: yes
   roles:
     - redmine

@@ -1,6 +1,6 @@
 ---
 - name: Installing Vagrant and UP VM Machine
-  hosts: jenkins_m
+  hosts: aws_jen
   become: yes
   roles:
     - jenkins

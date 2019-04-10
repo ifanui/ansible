@@ -1,0 +1,6 @@
+---
+- name: Installing Nginx and Consul server
+  become: yes
+  hosts: jump
+  roles:
+    - jump
